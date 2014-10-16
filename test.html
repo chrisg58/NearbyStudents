@@ -1,0 +1,42 @@
+<html>
+  <head>
+  	<script src="[[JQUERY URL]]"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyALHYpJW_E6ZzBXpmiiIccFCuTkBJbt1rw&sensor=false&callback=initialize">
+     	
+		
+     	function calc(zip1, zip2){
+     		var directionsDisplay = new google.maps.DirectionsRenderer();
+		 	var mapOptions = {
+		    	zoom: 14,
+		    	center: haight
+		  	}
+	 		map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+  			directionsDisplay.setMap(map);
+	 		var directionsService = new google.maps.DirectionsService();
+    		var url = "http://maps.googleapis.com/maps/api/distancematrix/json?origins=" + zip1 + "&destinations=" + zip2 + "&key=AIzaSyALHYpJW_E6ZzBXpmiiIccFCuTkBJbt1rw&mode=driving&sensor=false";
+
+    		var request = {	origin: zip1,
+     			  		destination: zip2,
+	     			  	travelMode: TravelMode.DRIVING,
+	     			  	unitSystem: UnitSystem.IMPERIAL};
+	    	directionsService.route(reuqest, function(response, status) {
+	    		if status == (google.maps.DirectionsStatus.OK) {
+			      directionsDisplay.setDirections(response);
+			    }
+	    	})
+	    	$.getJSON(url, function( data ) {
+	    		var items = [];
+				$.each( data, function( key, val ) {
+					if (key == 
+				});
+				$( "<ul/>", {
+					html: items.join( "" )
+				}).appendTo( "body" );
+				});
+	    	})
+    	}
+    </script>
+    </head>
+    <body>
+
+    </body>

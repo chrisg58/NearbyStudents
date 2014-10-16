@@ -1,5 +1,4 @@
 import math, requests, json, urllib, codecs
-from apiclient.discovery import build
 
 earthRad = 3959
 
@@ -13,7 +12,7 @@ def distance(lat1, lng1, lat2, lng2):
 	return earthRad * c
 	
 def main():
-	print(str(distance(40.9175789, -74.1481710, 40.8586979, -74.0683850)) + " miles")
+	print(str(distance(40.9175789, -74.1481710, 40.8586979, -74.0683850)) + " miles")	
 
 if __name__ == '__main__':
 	main()
